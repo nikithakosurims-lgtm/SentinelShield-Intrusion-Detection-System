@@ -1,0 +1,11 @@
+Normal Request:
+curl "http://testphp.vulnweb.com/"
+
+SQL Injection Test:
+curl "http://testphp.vulnweb.com/artists.php?artist=%27%20OR%201=1--"
+
+XSS Test:
+curl "http://testphp.vulnweb.com/search.php?test=%3Cscript%3Ealert(1)%3C/script%3E"
+
+Rate Limiting Test:
+curl -s -o NUL "http://testphp.vulnweb.com/login.php"
